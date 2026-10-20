@@ -1,4 +1,4 @@
-package Lab3;
+package filmnow;
 
 public class FilmNow {
     private Filme[] filmes;
@@ -9,7 +9,30 @@ public class FilmNow {
         this.hotList = new Filme[10];
     }
 
-    public boolean adicionarFilme(String nome, int anoDeLancamento, String local, int posicaoLista) {
+    public String[] getFilmes() {
+        int cont = 0;
+        for (int i = 0; i < 100; i++){
+            if (filmes[i] != null) {
+                cont += 1;
+            }
+        }
+        String[] listaFilmes = new String[cont];
+        for (int i = 0; i < this.filmes.length; i++) {
+            if (filmes[i] != null) {
+                int novaposicao = i + 1;
+                listaFilmes[i] = novaposicao + " - " + filmes[i].getNome();
+
+                return listaFilmes;
+
+            }
+        }
+
+
+
+        return listaFilmes;
+    }
+
+    public boolean cadastraFilme(int posicaoLista, String nome, String anoDeLancamento, String local) {
         if (posicaoLista < 1 || posicaoLista > 100) {
             return false;
         }
@@ -30,7 +53,7 @@ public class FilmNow {
         return true;
     }
 
-    public String detalharFilme(int Posicao) {
+    public String getFilme(int Posicao) {
         if (Posicao < 1 || Posicao > 100) {
             return "POSIÇÃO INVÁLIDA";
         }
@@ -98,4 +121,6 @@ public class FilmNow {
         }
         return false;
     }
+
+
 }
