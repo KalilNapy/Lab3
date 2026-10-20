@@ -1,13 +1,13 @@
 
-package Lab3;
+package filmnow;
 
 public class Filme {
     private String nome;
-    private int anoLancamento;
+    private String anoLancamento;
     private String local;
 
 
-    public Filme(String nome, int anoLancamento, String local){
+    public Filme(String nome, String anoLancamento, String local){
         this.nome = nome;
         this.anoLancamento = anoLancamento;
         this.local = local;
@@ -16,7 +16,7 @@ public class Filme {
     public String getNome() {
         return nome;
     }
-    public int getAnoLancamento() {
+    public String getAnoLancamento() {
         return anoLancamento;
     }
     public String getLocal() {
@@ -35,7 +35,7 @@ public class Filme {
     }
     @Override
     public String toString() {
-    return nome + "," + anoLancamento + "\n" + local;
+        return nome + "," + anoLancamento + "\n" + local;
     }
     @Override
     public int hashCode() {
